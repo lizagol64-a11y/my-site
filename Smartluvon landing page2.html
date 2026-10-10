@@ -1,0 +1,512 @@
+<title>Smartluvon</title>
+<meta name="description" content="Лендинг AI-студии генерации контента Smartluvon: оффер, тарифы и форма заявки.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- ====== АНАЛИТИКА: вставьте свои ID в две строки ниже ====== -->
+<script>
+  var GA_ID = 'G-XXXXXXXXXX';   // Google Analytics 4: идентификатор потока данных (G-...)
+  var YM_ID = 0;                // Яндекс.Метрика: номер счётчика (число)
+
+  // Google Analytics 4
+  if (GA_ID.indexOf('XXXX') === -1) {
+    var gs = document.createElement('script'); gs.async = true;
+    gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(gs);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date()); gtag('config', GA_ID);
+  }
+  // Яндекс.Метрика
+  if (YM_ID > 0) {
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(YM_ID, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+  }
+  // Цели: отправка заявки и клики по кнопкам CTA
+  function trackGoal(name){
+    try{ if (window.gtag && GA_ID.indexOf('XXXX')===-1) gtag('event', name); }catch(e){}
+    try{ if (window.ym && YM_ID>0) ym(YM_ID, 'reachGoal', name); }catch(e){}
+  }
+</script>
+
+<style>
+  :root{
+    --primary:#2D1B4E;
+    --primary-dark:#1A1030;
+    --secondary:#6C4AB6;
+    --lavender:#F2EEFB;
+    --bg:#FBFAFE;
+    --surface:#FFFFFF;
+    --accent:#00C896;
+    --accent-dark:#00A67D;
+    --coral:#E8536B;
+    --text:#211432;
+    --muted:#6E6480;
+    --border:#E6DFF5;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#150E24;
+      --surface:#1E1533;
+      --lavender:#241A3D;
+      --text:#F2EEFB;
+      --muted:#B4A9CE;
+      --border:#33254F;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#150E24;
+    --surface:#1E1533;
+    --lavender:#241A3D;
+    --text:#F2EEFB;
+    --muted:#B4A9CE;
+    --border:#33254F;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"IBM Plex Sans", Arial, sans-serif;
+    margin:0;
+    padding-inline:0;
+    line-height:1.5;
+  }
+  img{max-width:100%;}
+  h1,h2,h3{
+    font-family:"Fraunces", Georgia, serif;
+    font-weight:700;
+    text-wrap:balance;
+    margin:0 0 .4em;
+    color:var(--text);
+  }
+  .mono{font-family:"IBM Plex Mono", monospace;}
+  .wrap{max-width:1120px; margin:0 auto; padding-inline:20px;}
+  section{padding-block:64px;}
+  a{color:inherit;}
+
+  .eyebrow{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.78rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent-dark);
+    font-weight:500;
+  }
+  :root[data-theme="dark"] .eyebrow, @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .eyebrow{color:var(--accent);}}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 28px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:.98rem;
+    border:none;
+    cursor:pointer;
+    text-decoration:none;
+  }
+  .btn-accent{background:var(--accent); color:var(--primary-dark);}
+  .btn-accent:hover{background:var(--accent-dark);}
+  .btn-ghost{background:transparent; color:var(--surface); border:1.5px solid rgba(255,255,255,.35);}
+  .btn-outline{background:transparent; color:var(--primary); border:1.5px solid var(--border);}
+  :root[data-theme="dark"] .btn-outline, @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn-outline{color:var(--text);}}
+
+  /* ---- Nav ---- */
+  header.nav{
+    position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding-block:14px;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:"Fraunces",serif; font-weight:700; font-size:1.15rem;}
+  .logo-mark{width:34px;height:34px;border-radius:10px;background:var(--primary);color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:"Fraunces",serif;font-weight:700;}
+  .nav-links{display:flex; gap:28px; font-size:.92rem; color:var(--muted);}
+  .nav-links a:hover{color:var(--text);}
+  @media (max-width:640px){ .nav-links{display:none;} }
+
+  /* ---- Hero (Оффер) ---- */
+  .hero{
+    background:linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    padding-block:72px 88px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:-20% -10% auto auto;
+    width:420px; height:420px; border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, var(--secondary), transparent 70%);
+    opacity:.55;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; left:-8%; bottom:-30%;
+    width:340px; height:340px; border-radius:50%;
+    background:radial-gradient(circle at 60% 40%, var(--accent), transparent 70%);
+    opacity:.22;
+  }
+  .hero-grid{
+    position:relative; z-index:1;
+    display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center;
+  }
+  @media (max-width:860px){ .hero-grid{grid-template-columns:1fr;} }
+  .hero h1{font-size:clamp(2.1rem, 4.4vw, 3.4rem); color:#fff; line-height:1.08;}
+  .hero p.lead{color:#D8CFEE; font-size:1.08rem; max-width:46ch; margin:0 0 28px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .hero-note{margin-top:16px; font-size:.85rem; color:#B9AEDA;}
+
+  .hero-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:18px;
+    padding:22px;
+    backdrop-filter:blur(6px);
+  }
+  .hero-card .tile-row{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px;}
+  .tile{background:rgba(255,255,255,.07); border-radius:12px; padding:14px; font-size:.82rem; color:#E4DCF6;}
+  .tile b{display:block; font-family:"Fraunces",serif; font-size:1.3rem; color:#fff; margin-bottom:2px;}
+
+  /* ---- Product info ---- */
+  .product{background:var(--bg);}
+  .section-head{max-width:640px; margin-bottom:40px;}
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:860px){ .grid-3{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .grid-3{grid-template-columns:1fr;} }
+  .prod-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:22px;
+  }
+  .prod-icon{
+    width:42px; height:42px; border-radius:11px; background:var(--lavender);
+    display:flex; align-items:center; justify-content:center; margin-bottom:14px; font-size:1.2rem;
+  }
+  .prod-card h3{font-size:1.08rem; margin-bottom:6px;}
+  .prod-card p{color:var(--muted); font-size:.92rem; margin:0;}
+
+  /* ---- Advantages ---- */
+  .advantages{background:var(--lavender);}
+  .adv-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  @media (max-width:640px){ .adv-grid{grid-template-columns:1fr;} }
+  .adv-item{display:flex; gap:14px; background:var(--surface); border-radius:14px; padding:18px; border:1px solid var(--border);}
+  .adv-num{font-family:"IBM Plex Mono",monospace; color:var(--accent-dark); font-weight:600; font-size:.85rem; flex:none;}
+  .adv-item h4{margin:0 0 4px; font-size:1rem; font-family:"IBM Plex Sans"; font-weight:600;}
+  .adv-item p{margin:0; color:var(--muted); font-size:.88rem;}
+
+  /* ---- How it works (Схема работы) ---- */
+  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; counter-reset: step;}
+  @media (max-width:860px){ .steps{grid-template-columns:1fr 1fr;} }
+  @media (max-width:480px){ .steps{grid-template-columns:1fr;} }
+  .step{position:relative; padding:22px 18px 18px; background:var(--surface); border:1px solid var(--border); border-radius:14px;}
+  .step-badge{
+    width:30px;height:30px;border-radius:50%;background:var(--primary);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;font-family:"IBM Plex Mono";font-size:.82rem;font-weight:600;
+    margin-bottom:12px;
+  }
+  .step h4{margin:0 0 6px; font-size:.98rem; font-family:"IBM Plex Sans"; font-weight:600;}
+  .step p{margin:0; color:var(--muted); font-size:.85rem;}
+
+  /* ---- Testimonials ---- */
+  .testi{background:var(--primary); color:#fff;}
+  .testi .section-head h2{color:#fff;}
+  .testi .section-head p{color:#C9BEE6;}
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  @media (max-width:860px){ .testi-grid{grid-template-columns:1fr;} }
+  .testi-card{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:20px;}
+  .testi-card p.quote{font-size:.94rem; color:#EFE9FB; margin:0 0 14px;}
+  .testi-who{display:flex; align-items:center; gap:10px;}
+  .avatar{width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--primary-dark);display:flex;align-items:center;justify-content:center;font-family:"Fraunces",serif;font-weight:700;font-size:.9rem;}
+  .testi-who div{font-size:.82rem; color:#C9BEE6;}
+  .testi-who b{display:block; color:#fff; font-size:.9rem;}
+
+  /* ---- Trust badges (сертификаты/дипломы) ---- */
+  .trust{background:var(--bg);}
+  .trust-row{display:flex; flex-wrap:wrap; gap:14px; justify-content:center;}
+  .badge{
+    display:flex; align-items:center; gap:10px;
+    background:var(--surface); border:1px solid var(--border); border-radius:999px;
+    padding:10px 18px; font-size:.85rem; color:var(--muted);
+  }
+  .badge b{color:var(--text); font-weight:600;}
+
+  /* ---- Pricing (Стоимость) ---- */
+  .pricing{background:var(--lavender);}
+  .price-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  @media (max-width:860px){ .price-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .price-grid{grid-template-columns:1fr;} }
+  .price-card{background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:24px; position:relative;}
+  .price-card.popular{border:1.5px solid var(--accent); box-shadow:0 8px 24px -12px rgba(0,200,150,.35);}
+  .price-tag{position:absolute; top:-11px; right:20px; background:var(--accent); color:var(--primary-dark); font-size:.72rem; font-weight:700; padding:4px 10px; border-radius:999px;}
+  .price-card h3{font-size:1.02rem; margin-bottom:4px;}
+  .price-num{font-family:"Fraunces",serif; font-size:2rem; font-weight:700; margin:8px 0 2px;}
+  .price-sub{color:var(--muted); font-size:.82rem; margin-bottom:16px;}
+  .price-card ul{list-style:none; margin:0 0 18px; padding:0; font-size:.85rem; color:var(--muted); display:flex; flex-direction:column; gap:8px;}
+  .price-card li::before{content:"✓ "; color:var(--accent-dark); font-weight:700;}
+
+  /* ---- Order form + special element (countdown) ---- */
+  .order{background:linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%); color:#fff; position:relative; overflow:hidden;}
+  .order::before{content:""; position:absolute; right:-10%; bottom:-30%; width:360px; height:360px; border-radius:50%; background:radial-gradient(circle, var(--secondary), transparent 70%); opacity:.45;}
+  .order-grid{position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;}
+  @media (max-width:860px){ .order-grid{grid-template-columns:1fr;} }
+  .countdown{display:flex; gap:10px; margin:18px 0 22px;}
+  .cd-box{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); border-radius:12px; padding:10px 14px; text-align:center; min-width:64px;}
+  .cd-box b{display:block; font-family:"IBM Plex Mono"; font-size:1.4rem;}
+  .cd-box span{font-size:.7rem; color:#C9BEE6;}
+  form.order-form{background:var(--surface); border-radius:16px; padding:26px; display:flex; flex-direction:column; gap:12px;}
+  form.order-form label{font-size:.82rem; color:var(--muted); font-weight:500;}
+  form.order-form input{
+    width:100%; padding:11px 13px; border-radius:9px; border:1px solid var(--border);
+    background:var(--bg); color:var(--text); font-family:"IBM Plex Sans"; font-size:.95rem;
+  }
+  form.order-form input:focus{outline:2px solid var(--accent); outline-offset:1px;}
+  .form-note{font-size:.78rem; color:var(--muted);}
+  #formMsg{font-size:.85rem; color:var(--accent-dark); min-height:1.2em;}
+
+  /* ---- Footer / contacts ---- */
+  footer{background:var(--primary-dark); color:#C9BEE6; padding-block:40px;}
+  .footer-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px;}
+  footer .logo{color:#fff;}
+  .foot-contacts{display:flex; flex-direction:column; gap:6px; font-size:.88rem;}
+  .foot-contacts b{color:#fff;}
+  .foot-bottom{margin-top:28px; padding-top:20px; border-top:1px solid rgba(255,255,255,.1); font-size:.78rem; color:#9686BC; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+</style>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="logo"><span class="logo-mark">S</span>Smartluvon</div>
+    <nav class="nav-links">
+      <a href="#product">Продукт</a>
+      <a href="#advantages">Преимущества</a>
+      <a href="#pricing">Тарифы</a>
+      <a href="#reviews">Отзывы</a>
+    </nav>
+    <a href="#order" class="btn btn-outline" style="padding:9px 18px; font-size:.88rem;">Попробовать</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow" style="color:#8CF5D6;">AI-студия генерации контента</p>
+      <h1>Творите без границ — 100+ нейросетей в одном окне</h1>
+      <p class="lead">Фото, видео, 3D, аудио и чат-ассистент в единой веб-студии. Оплата в рублях, без VPN, токены не сгорают.</p>
+      <div class="hero-actions">
+        <a href="#order" class="btn btn-accent">Начать бесплатно →</a>
+        <a href="#product" class="btn btn-ghost" style="color:#FFFFFF;">Как это работает</a>
+      </div>
+      <p class="hero-note">10 бесплатных токенов при регистрации · без привязки карты</p>
+    </div>
+    <div class="hero-card">
+      <p class="eyebrow" style="color:#8CF5D6;">Сейчас в студии</p>
+      <h3 style="color:#fff; font-size:1.15rem; margin-top:8px;">Карточка товара для маркетплейса</h3>
+      <p style="color:#C9BEE6; font-size:.88rem; margin:0;">Замена фона · Реалистичный свет · 4 варианта ракурса</p>
+      <div class="tile-row">
+        <div class="tile"><b>100+</b>моделей в каталоге</div>
+        <div class="tile"><b>1,09 ₽</b>цена токена от</div>
+        <div class="tile"><b>24–48ч</b>ответ поддержки</div>
+        <div class="tile"><b>РФ</b>хранение данных</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product" id="product">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Сведения о продукции</p>
+      <h2>Одна студия — весь цикл генерации контента</h2>
+    </div>
+    <div class="grid-3">
+      <div class="prod-card"><div class="prod-icon">🖼️</div><h3>Фото и видео</h3><p>Генерация и редактирование изображений, замена фона, ретушь, анимация фото, lip-sync и motion control.</p></div>
+      <div class="prod-card"><div class="prod-icon">🧊</div><h3>3D из фото</h3><p>Построение 3D-моделей из фотографии или текстового описания для карточек товара и презентаций.</p></div>
+      <div class="prod-card"><div class="prod-icon">🎧</div><h3>Аудио</h3><p>Синтез голоса, музыки и звуковых эффектов для роликов, подкастов и рекламных креативов.</p></div>
+      <div class="prod-card"><div class="prod-icon">🧩</div><h3>Canvas-редактор</h3><p>Нодовый редактор для сборки сложных пайплайнов генерации из нескольких моделей подряд.</p></div>
+      <div class="prod-card"><div class="prod-icon">💬</div><h3>Чат-ассистент</h3><p>Единый диалог, объединяющий текст, фото и правки — без переключения между инструментами.</p></div>
+      <div class="prod-card"><div class="prod-icon">🛍️</div><h3>Шаблоны маркетплейсов</h3><p>Готовые форматы карточек под требования Wildberries и Ozon.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="advantages" id="advantages">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Преимущества</p>
+      <h2>Почему выбирают Smartluvon</h2>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-item"><div class="adv-num">01</div><div><h4>100+ моделей в одном интерфейсе</h4><p>OpenAI, Google, Bytedance, ElevenLabs и другие — без переключения между сервисами.</p></div></div>
+      <div class="adv-item"><div class="adv-num">02</div><div><h4>Рубли, без VPN</h4><p>Оплата напрямую из России, без иностранных карт и посредников.</p></div></div>
+      <div class="adv-item"><div class="adv-num">03</div><div><h4>Токены не сгорают</h4><p>Платите по факту использования — остаток сохраняется сколько угодно.</p></div></div>
+      <div class="adv-item"><div class="adv-num">04</div><div><h4>Коммерческая лицензия включена</h4><p>Контент можно использовать в рекламе и на маркетплейсах на любом тарифе.</p></div></div>
+      <div class="adv-item"><div class="adv-num">05</div><div><h4>Хранение данных в РФ</h4><p>Файлы — на серверах в России, доступ по подписанным истекающим ссылкам.</p></div></div>
+      <div class="adv-item"><div class="adv-num">06</div><div><h4>Бесплатный старт</h4><p>10 токенов на пробу сразу после регистрации, без привязки карты.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="scheme">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Схема работы</p>
+      <h2>От идеи до готового контента — 4 шага</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-badge">01</div><h4>Регистрация</h4><p>Создайте аккаунт и получите 10 токенов бесплатно.</p></div>
+      <div class="step"><div class="step-badge">02</div><h4>Выбор модели</h4><p>Найдите нужный инструмент среди 100+ моделей студии.</p></div>
+      <div class="step"><div class="step-badge">03</div><h4>Генерация</h4><p>Опишите задачу или соберите пайплайн в Canvas-редакторе.</p></div>
+      <div class="step"><div class="step-badge">04</div><h4>Готовый результат</h4><p>Скачайте контент с коммерческой лицензией и используйте сразу.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="testi" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" style="color:#8CF5D6;">Отзывы</p>
+      <h2>Что говорят пользователи</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card"><p class="quote">«Собираю карточки для Wildberries за вечер вместо недели ожидания фотостудии».</p><div class="testi-who"><div class="avatar">М</div><div><b>Марина К.</b>продавец маркетплейса</div></div></div>
+      <div class="testi-card"><p class="quote">«Наконец сервис с оплатой в рублях без танцев с VPN и картами».</p><div class="testi-who"><div class="avatar">Д</div><div><b>Дмитрий С.</b>SMM-специалист</div></div></div>
+      <div class="testi-card"><p class="quote">«Canvas-редактор экономит часы — собираю пайплайн один раз и переиспользую».</p><div class="testi-who"><div class="avatar">А</div><div><b>Анна В.</b>дизайнер</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-row">
+      <div class="badge">🔒 <b>Хранение в РФ</b>&nbsp;— подписанные ссылки</div>
+      <div class="badge">📄 <b>Коммерческая лицензия</b>&nbsp;— на всех тарифах</div>
+      <div class="badge">💳 <b>Оплата в рублях</b>&nbsp;— без VPN и посредников</div>
+      <div class="badge">⏱ <b>Поддержка 24–48ч</b>&nbsp;— smartluvon@mail.ru</div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Стоимость</p>
+      <h2>Тариф под любой объём задач</h2>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>Начальный</h3>
+        <div class="price-num mono">149 ₽</div>
+        <div class="price-sub">120 токенов · 1,24 ₽/токен</div>
+        <ul><li>Доступ ко всем моделям</li><li>Коммерческая лицензия</li><li>Токены без срока действия</li></ul>
+        <a href="#order" class="btn btn-outline" style="width:100%; justify-content:center;">Выбрать</a>
+      </div>
+      <div class="price-card popular">
+        <span class="price-tag">Популярный</span>
+        <h3>Профессиональный</h3>
+        <div class="price-num mono">669 ₽</div>
+        <div class="price-sub">600 токенов · 1,11 ₽/токен</div>
+        <ul><li>Доступ ко всем моделям</li><li>Приоритетная генерация</li><li>Коммерческая лицензия</li></ul>
+        <a href="#order" class="btn btn-accent" style="width:100%; justify-content:center;">Выбрать</a>
+      </div>
+      <div class="price-card">
+        <h3>Креатор</h3>
+        <div class="price-num mono">1 299 ₽</div>
+        <div class="price-sub">1185 токенов · 1,09 ₽/токен</div>
+        <ul><li>Доступ ко всем моделям</li><li>Минимальная цена токена</li><li>Для команд и агентств</li></ul>
+        <a href="#order" class="btn btn-outline" style="width:100%; justify-content:center;">Выбрать</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="order" id="order">
+  <div class="wrap order-grid">
+    <div>
+      <p class="eyebrow" style="color:#8CF5D6;">Специальное предложение</p>
+      <h2 style="color:#fff;">Бесплатный пакет действует ограниченное время</h2>
+      <p style="color:#C9BEE6; max-width:42ch;">Зарегистрируйтесь до конца недели и получите 10 токенов на пробу — без привязки карты.</p>
+      <div class="countdown mono" id="countdown">
+        <div class="cd-box"><b id="cd-d">02</b><span>дня</span></div>
+        <div class="cd-box"><b id="cd-h">14</b><span>часа</span></div>
+        <div class="cd-box"><b id="cd-m">36</b><span>мин</span></div>
+        <div class="cd-box"><b id="cd-s">10</b><span>сек</span></div>
+      </div>
+      <p class="form-note" style="color:#B9AEDA;">Обратный отсчёт демонстрационный — иллюстрирует спецэлемент лендинга.</p>
+    </div>
+    <form class="order-form" id="orderForm">
+      <h3 style="margin-bottom:4px; color:var(--text);">Оставить заявку</h3>
+      <label for="name">Имя</label>
+      <input id="name" name="name" type="text" placeholder="Как к вам обращаться" required>
+      <label for="contact">Email или Telegram</label>
+      <input id="contact" name="contact" type="text" placeholder="you@example.com или @username" required>
+      <button type="submit" class="btn btn-accent" style="justify-content:center; margin-top:6px;">Получить 10 токенов →</button>
+      <p id="formMsg" role="status"></p>
+      <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+    </form>
+  </div>
+</section>
+
+<footer id="contacts">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo"><span class="logo-mark">S</span>Smartluvon</div>
+        <p style="max-width:32ch; font-size:.85rem; margin-top:10px;">AI-студия генерации контента для маркетологов, дизайнеров и продавцов маркетплейсов.</p>
+      </div>
+      <div class="foot-contacts">
+        <b>Контакты</b>
+        <span>smartluvon@mail.ru</span>
+        <span>Telegram-бот: @smartluvon_bot</span>
+        <span>Ответ службы поддержки: 24–48 часов</span>
+      </div>
+      <div class="foot-contacts">
+        <b>Продукт</b>
+        <a href="#product">Возможности студии</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#order">Начать бесплатно</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  try{
+    document.querySelectorAll('a.btn').forEach(function(a){a.addEventListener('click',function(){trackGoal('cta_click');});});
+    var form = document.getElementById('orderForm');
+    var msg = document.getElementById('formMsg');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      trackGoal('lead');
+      msg.textContent = 'Заявка принята — демо-форма лендинга (реальная отправка не выполняется).';
+    });
+  }catch(e){}
+
+  try{
+    var target = Date.now() + (2*24*3600 + 14*3600 + 36*60 + 10)*1000;
+    var d = document.getElementById('cd-d'), h = document.getElementById('cd-h'),
+        m = document.getElementById('cd-m'), s = document.getElementById('cd-s');
+    function tick(){
+      var diff = Math.max(0, target - Date.now());
+      var days = Math.floor(diff/86400000);
+      var hours = Math.floor((diff%86400000)/3600000);
+      var mins = Math.floor((diff%3600000)/60000);
+      var secs = Math.floor((diff%60000)/1000);
+      d.textContent = String(days).padStart(2,'0');
+      h.textContent = String(hours).padStart(2,'0');
+      m.textContent = String(mins).padStart(2,'0');
+      s.textContent = String(secs).padStart(2,'0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  }catch(e){}
+})();
+</script>
